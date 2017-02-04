@@ -10,11 +10,6 @@ class BaseController extends Controller {
 	}
 
 	public function checkLogin($redirect = true){
-    	if (strtolower(C("DB_TYPE")) == 'mysql' ) {
-            echo 'ShowDoc does not support mysql any more . https://www.showdoc.cc/help?page_id=31990 ';
-            clear_runtime();
-            exit();
-    	}
 		if ( ! session("login_user")) {
 			$cookie_token = cookie('cookie_token');
 			if ($cookie_token) {
